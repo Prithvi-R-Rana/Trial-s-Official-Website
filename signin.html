@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Firebase v9 (compat) for use with HTML via <script> -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBDkrXJWh6UOFfUrpoD9jP3iN6qGvRSMFg",
+    authDomain: "trial-s-1st-official-website.firebaseapp.com",
+    projectId: "trial-s-1st-official-website",
+    appId: "1:1008560746411:web:64f788296ac8fd5a9f6cee"
+  };
+
+  // Initialize Firebase using compat mode
+  firebase.initializeApp(firebaseConfig);
+</script>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <style>
+    body {
+      background: #1e3c72;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-box {
+      background: #2a5298;
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #00b894;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #019875;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-box">
+    <h2>Sign Up</h2>
+    <input type="text" id="name" placeholder="Full Name" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Create Password" />
+    <button onclick="signUp()">Sign Up</button>
+    <a href="Trial website.html">← Back to Home</a>
+    <p id="message"></p>
+  </div>
+<script>
+  function signUp() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        document.getElementById("message").textContent = "✅ Signed up successfully!";
+      })
+      .catch((error) => {
+        document.getElementById("message").textContent = "❌ " + error.message;
+      });
+  }
+</script>
+</body>
+</html>
