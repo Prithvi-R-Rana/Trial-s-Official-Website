@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Mastery - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .button {
+      margin-top: 30px;
+      background-color: #00b894;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #019875;
+    }
+
+    .login-buttons {
+      margin-top: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .login-buttons.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .login-buttons button {
+      background-color: #0984e3;
+      border: none;
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 1em;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .login-buttons button:hover {
+      transform: scale(1.1);
+      background-color: #0652dd;
+    }
+
+    .animation {
+      margin-top: 40px;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .animation.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Wanna master AI?</h1>
+  <p>You are at the right place.</p>
+
+   <div>
+    <a href="features.html">
+  <button>Explore our platform's unique Features</button></a>
+   </div>
+  <button class="button" onclick="showOptions()">Proceed</button>
+
+  <div class="animation" id="animationBox">
+    <img src="https://media.giphy.com/media/QBd2kLB5qDmysEXre9/giphy.gif" alt="AI Animation" width="200" />
+  </div>
+
+  <div class="login-buttons" id="loginSection">
+    <a href="signin.html"><button onclick="alert('Sign In Clicked')">Sign In</button></a>
+    <a href="login.html"><button onclick="alert('Log In Clicked')">Log In</button></a>
+  </div>
+
+  <script>
+    function showOptions() {
+      document.getElementById('loginSection').classList.add('show');
+      document.getElementById('animationBox').classList.add('show');
+    }
+  </script>
+<div style="
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #20232a;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;">
+  🚀 Powered by <strong>ChatGPT</strong>
+</div>
+</body>
+<footer style="background:#1e1e2f; color: #fff; text-align:center; padding: 15px; font-family: Arial, sans-serif;">
+  Powered by <strong>ChatGPT</strong> ✨
+</footer>
+</html>
